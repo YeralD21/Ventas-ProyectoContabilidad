@@ -1,6 +1,4 @@
-
 package Modelo;
-
 
 public class Productos {
     private int id;
@@ -10,10 +8,11 @@ public class Productos {
     private String proveedorPro;
     private int stock;
     private double precio;
-    
-    public Productos(){
-        
-    }
+    private double precioConIgv; // Nuevo campo para precio con IGV
+
+    private static final double IGV_RATE = 0.18; // Tasa del IGV (18%)
+
+    public Productos() {}
 
     public Productos(int id, String codigo, String nombre, int proveedor, String proveedorPro, int stock, double precio) {
         this.id = id;
@@ -23,6 +22,11 @@ public class Productos {
         this.proveedorPro = proveedorPro;
         this.stock = stock;
         this.precio = precio;
+        this.precioConIgv = calcularPrecioConIgv(precio);
+    }
+
+    private double calcularPrecioConIgv(double precio) {
+        return precio * (1 + IGV_RATE);
     }
 
     public int getId() {
@@ -79,7 +83,14 @@ public class Productos {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+        this.precioConIgv = calcularPrecioConIgv(precio); // Actualizar precio con IGV al cambiar el precio base
     }
 
-   
+    public double getPrecioConIgv() {
+        return precioConIgv;
+    }
+
+    public void setPrecioConIgv(double precioConIgv) {
+        this.precioConIgv = precioConIgv;
+    }
 }

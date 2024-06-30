@@ -34,7 +34,7 @@ public class ProductosDao {
     
     public List ListarProductos(){
        List<Productos> Listapro = new ArrayList();
-       String sql = "SELECT pr.id AS id_proveedor, pr.nombre AS nombre_proveedor, p.* FROM proveedor pr INNER JOIN productos p ON pr.id = p.proveedor ORDER BY p.id DESC";
+    String sql = "SELECT pr.id AS id_proveedor, pr.nombre AS nombre_proveedor, p.* FROM proveedor pr INNER JOIN productos p ON pr.id = p.proveedor ORDER BY p.id DESC";
        try {
            con = cn.getConnection();
            ps = con.prepareStatement(sql);
@@ -48,6 +48,8 @@ public class ProductosDao {
                pro.setProveedorPro(rs.getString("nombre_proveedor"));
                pro.setStock(rs.getInt("stock"));
                pro.setPrecio(rs.getDouble("precio"));
+               double precioConIgv = rs.getDouble("precio") * 1.18; // Calcular el precio con IGV
+               pro.setPrecioConIgv(precioConIgv);
                Listapro.add(pro);
            }
        } catch (SQLException e) {
@@ -111,6 +113,8 @@ public class ProductosDao {
                 producto.setId(rs.getInt("id"));
                 producto.setNombre(rs.getString("nombre"));
                 producto.setPrecio(rs.getDouble("precio"));
+                double precioConIgv = rs.getDouble("precio") * 1.18; // Calcular el precio con IGV
+                producto.setPrecioConIgv(precioConIgv);
                 producto.setStock(rs.getInt("stock"));
             }
         } catch (SQLException e) {
@@ -134,6 +138,8 @@ public class ProductosDao {
                 pro.setProveedorPro(rs.getString("nombre_proveedor"));
                 pro.setStock(rs.getInt("stock"));
                 pro.setPrecio(rs.getDouble("precio"));
+                double precioConIgv = rs.getDouble("precio") * 1.18; // Calcular el precio con IGV
+                pro.setPrecioConIgv(precioConIgv);
             }
         } catch (SQLException e) {
             System.out.println(e.toString());

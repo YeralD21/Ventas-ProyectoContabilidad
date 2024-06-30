@@ -9,7 +9,7 @@ import Vista.Login;
 
 /**
  *
- * @author USUARIO
+ * @author YeralD20
  */
 public class SistemaVenta {
 
