@@ -192,6 +192,30 @@ public final class Sistema extends javax.swing.JFrame {
             i = i - 1;
         }
     }
+    
+     // Método para calcular el precio con IGV
+    private double calcularPrecioConIGV(double precio) {
+        double igv = 0.18; // IGV del 18%
+        return precio * (1 + igv);
+    }
+
+    // Método para actualizar la tabla con el precio con IGV
+    private void actualizarTablaConIGV() {
+        DefaultTableModel model = (DefaultTableModel) TableVenta.getModel();
+        int rowCount = model.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            double precioUnitario = (double) model.getValueAt(i, 3); // Suponiendo que el precio unitario está en la columna 3
+            double precioConIGV = calcularPrecioConIGV(precioUnitario);
+            model.setValueAt(precioConIGV, i, 5); // Suponiendo que la nueva columna está en la posición 5
+        }
+    }
+
+    // Método que se llama al agregar o actualizar una fila en la tabla
+    private void agregarActualizarFilaTabla(Object[] datosFila) {
+        DefaultTableModel model = (DefaultTableModel) TableVenta.getModel();
+        model.addRow(datosFila);
+        actualizarTablaConIGV();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
