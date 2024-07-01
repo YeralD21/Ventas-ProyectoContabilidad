@@ -193,29 +193,23 @@ public final class Sistema extends javax.swing.JFrame {
         }
     }
     
-     // Método para calcular el precio con IGV
-    private double calcularPrecioConIGV(double precio) {
-        double igv = 0.18; // IGV del 18%
-        return precio * (1 + igv);
-    }
+    // Método para calcular el precio con IGV
+private double calcularPrecioConIGV(double precio) {
+    double igv = 0.18; // IGV del 18%
+    return precio * (1 + igv);
+}
 
-    // Método para actualizar la tabla con el precio con IGV
-    private void actualizarTablaConIGV() {
-        DefaultTableModel model = (DefaultTableModel) TableVenta.getModel();
-        int rowCount = model.getRowCount();
-        for (int i = 0; i < rowCount; i++) {
-            double precioUnitario = (double) model.getValueAt(i, 3); // Suponiendo que el precio unitario está en la columna 3
-            double precioConIGV = calcularPrecioConIGV(precioUnitario);
-            model.setValueAt(precioConIGV, i, 5); // Suponiendo que la nueva columna está en la posición 5
-        }
+// Método para actualizar la tabla con el precio con IGV
+// Método para actualizar la tabla con el precio con IGV
+private void actualizarTablaConIGV() {
+    DefaultTableModel model = (DefaultTableModel) TableVenta.getModel();
+    int rowCount = model.getRowCount();
+    for (int i = 0; i < rowCount; i++) {
+        double precioTotal = (double) model.getValueAt(i, 4); // Suponiendo que el precio total está en la columna 4
+        double precioConIGV = calcularPrecioConIGV(precioTotal);
+        model.setValueAt(precioConIGV, i, 5); // Suponiendo que la nueva columna está en la posición 5
     }
-
-    // Método que se llama al agregar o actualizar una fila en la tabla
-    private void agregarActualizarFilaTabla(Object[] datosFila) {
-        DefaultTableModel model = (DefaultTableModel) TableVenta.getModel();
-        model.addRow(datosFila);
-        actualizarTablaConIGV();
-    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -397,12 +391,12 @@ public final class Sistema extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 110, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logo_pdf.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/logorick1.png"))); // NOI18N
 
-        btnNuevaVenta.setBackground(new java.awt.Color(0, 0, 0));
+        btnNuevaVenta.setBackground(new java.awt.Color(0, 0, 153));
         btnNuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Nventa.png"))); // NOI18N
         btnNuevaVenta.setText("Nueva Venta");
@@ -414,7 +408,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnClientes.setBackground(new java.awt.Color(0, 0, 0));
+        btnClientes.setBackground(new java.awt.Color(0, 0, 153));
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Clientes.png"))); // NOI18N
         btnClientes.setText("Clientes");
@@ -426,7 +420,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnProveedor.setBackground(new java.awt.Color(0, 0, 0));
+        btnProveedor.setBackground(new java.awt.Color(0, 0, 153));
         btnProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/proveedor.png"))); // NOI18N
         btnProveedor.setText("Proveedor");
@@ -438,7 +432,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnProductos.setBackground(new java.awt.Color(0, 0, 0));
+        btnProductos.setBackground(new java.awt.Color(0, 0, 153));
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/producto.png"))); // NOI18N
         btnProductos.setText("Productos");
@@ -455,7 +449,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnVentas.setBackground(new java.awt.Color(0, 0, 0));
+        btnVentas.setBackground(new java.awt.Color(0, 0, 153));
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/compras.png"))); // NOI18N
         btnVentas.setText("Ventas");
@@ -467,7 +461,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnConfig.setBackground(new java.awt.Color(0, 0, 0));
+        btnConfig.setBackground(new java.awt.Color(0, 0, 153));
         btnConfig.setForeground(new java.awt.Color(255, 255, 255));
         btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/config.png"))); // NOI18N
         btnConfig.setText("Config");
@@ -485,7 +479,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
+        btnUsuarios.setBackground(new java.awt.Color(0, 0, 153));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/editar_user.png"))); // NOI18N
         btnUsuarios.setText("Usuarios");
@@ -513,13 +507,17 @@ public final class Sistema extends javax.swing.JFrame {
                 .addGap(74, 74, 74)
                 .addComponent(tipo)
                 .addContainerGap(126, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelVendedor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tipo)
@@ -537,16 +535,17 @@ public final class Sistema extends javax.swing.JFrame {
                 .addComponent(btnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 560));
 
-        jLabel38.setFont(new java.awt.Font("Yu Gothic Light", 3, 36)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 48)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Sistema de Venta");
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 70, -1, -1));
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/waves.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/sip1.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 870, 150));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
@@ -626,6 +625,15 @@ public final class Sistema extends javax.swing.JFrame {
                 "ID", "DESCRIPCIÓN", "CANTIDAD", "PRECIO U.", "PRECIO TOTAL", "Precio con IGV"
             }
         ));
+        TableVenta.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                TableVentaAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(TableVenta);
         if (TableVenta.getColumnModel().getColumnCount() > 0) {
             TableVenta.getColumnModel().getColumn(0).setPreferredWidth(60);
@@ -1631,7 +1639,7 @@ public final class Sistema extends javax.swing.JFrame {
         txtPass.setBorder(null);
         jPanel13.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 182, 226, 30));
 
-        btnIniciar.setBackground(new java.awt.Color(0, 110, 255));
+        btnIniciar.setBackground(new java.awt.Color(0, 0, 153));
         btnIniciar.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciar.setText("Registrar");
@@ -1705,7 +1713,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         jPanel13.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 273, 226, 2));
 
-        jPanel18.setBackground(new java.awt.Color(0, 110, 255));
+        jPanel18.setBackground(new java.awt.Color(0, 0, 153));
 
         jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
@@ -2125,49 +2133,51 @@ public final class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCantidadVentaKeyTyped
 
     private void txtCantidadVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadVentaKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (!"".equals(txtCantidadVenta.getText())) {
-                int id = Integer.parseInt(txtIdPro.getText());
-                String descripcion = txtDescripcionVenta.getText();
-                int cant = Integer.parseInt(txtCantidadVenta.getText());
-                double precio = Double.parseDouble(txtPrecioVenta.getText());
-                double total = cant * precio;
-                int stock = Integer.parseInt(txtStockDisponible.getText());
-                if (stock >= cant) {
-                    item = item + 1;
-                    tmp = (DefaultTableModel) TableVenta.getModel();
-                    for (int i = 0; i < TableVenta.getRowCount(); i++) {
-                        if (TableVenta.getValueAt(i, 1).equals(txtDescripcionVenta.getText())) {
-                            JOptionPane.showMessageDialog(null, "El producto ya esta registrado");
-                            return;
-                        }
+    if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (!"".equals(txtCantidadVenta.getText())) {
+            int id = Integer.parseInt(txtIdPro.getText());
+            String descripcion = txtDescripcionVenta.getText();
+            int cant = Integer.parseInt(txtCantidadVenta.getText());
+            double precio = Double.parseDouble(txtPrecioVenta.getText());
+            double total = cant * precio;
+            double precioConIGV = calcularPrecioConIGV(total); // Calcular el precio con IGV basado en el total
+            int stock = Integer.parseInt(txtStockDisponible.getText());
+            if (stock >= cant) {
+                item = item + 1;
+                tmp = (DefaultTableModel) TableVenta.getModel();
+                for (int i = 0; i < TableVenta.getRowCount(); i++) {
+                    if (TableVenta.getValueAt(i, 1).equals(txtDescripcionVenta.getText())) {
+                        JOptionPane.showMessageDialog(null, "El producto ya está registrado");
+                        return;
                     }
-                    ArrayList lista = new ArrayList();
-                    lista.add(item);
-                    lista.add(id);
-                    lista.add(descripcion);
-                    lista.add(cant);
-                    lista.add(precio);
-                    lista.add(total);
-                    Object[] O = new Object[5];
-                    O[0] = lista.get(1);
-                    O[1] = lista.get(2);
-                    O[2] = lista.get(3);
-                    O[3] = lista.get(4);
-                    O[4] = lista.get(5);
-                    tmp.addRow(O);
-                    TableVenta.setModel(tmp);
-                    TotalPagar();
-                    LimparVenta();
-                    txtCodigoVenta.requestFocus();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Stock no disponible");
                 }
+                ArrayList<Object> lista = new ArrayList<>();
+                lista.add(item);
+                lista.add(id);
+                lista.add(descripcion);
+                lista.add(cant);
+                lista.add(precio);
+                lista.add(total);
+                lista.add(precioConIGV); // Añadir el precio con IGV a la lista
+                Object[] O = new Object[6];
+                O[0] = lista.get(1);
+                O[1] = lista.get(2);
+                O[2] = lista.get(3);
+                O[3] = lista.get(4);
+                O[4] = lista.get(5);
+                O[5] = lista.get(6); // Añadir el precio con IGV a la fila de la tabla
+                tmp.addRow(O);
+                TableVenta.setModel(tmp);
+                TotalPagar();
+                LimparVenta();
+                txtCodigoVenta.requestFocus();
             } else {
-                JOptionPane.showMessageDialog(null, "Ingrese Cantidad");
+                JOptionPane.showMessageDialog(null, "Stock no disponible");
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese Cantidad");
         }
+    }
     }//GEN-LAST:event_txtCantidadVentaKeyPressed
 
     private void txtDescripcionVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionVentaKeyTyped
@@ -2271,6 +2281,10 @@ public final class Sistema extends javax.swing.JFrame {
         btnEliminarCliente.setEnabled(false);
         btnGuardarCliente.setEnabled(true);
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
+
+    private void TableVentaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TableVentaAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TableVentaAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -2500,14 +2514,14 @@ public final class Sistema extends javax.swing.JFrame {
     }
 
     private void TotalPagar() {
-        Totalpagar = 0.00;
-        int numFila = TableVenta.getRowCount();
-        for (int i = 0; i < numFila; i++) {
-            double cal = Double.parseDouble(String.valueOf(TableVenta.getModel().getValueAt(i, 4)));
-            Totalpagar = Totalpagar + cal;
-        }
-        LabelTotal.setText(String.format("%.2f", Totalpagar));
+    Totalpagar = 0.00;
+    int numFila = TableVenta.getRowCount();
+    for (int i = 0; i < numFila; i++) {
+        double precioConIGV = Double.parseDouble(String.valueOf(TableVenta.getModel().getValueAt(i, 5))); // Índice 5 para Precio con IGV
+        Totalpagar = Totalpagar + precioConIGV;
     }
+    LabelTotal.setText(String.format("%.2f", Totalpagar));
+}
 
     private void LimparVenta() {
         txtCodigoVenta.setText("");
