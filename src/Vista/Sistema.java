@@ -550,31 +550,34 @@ private void actualizarTablaConIGV() {
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Código");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Descripción");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cant");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Precio");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Stock Disponible");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        txtCodigoVenta.setBackground(new java.awt.Color(204, 204, 204));
         txtCodigoVenta.setBorder(null);
         txtCodigoVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -586,7 +589,6 @@ private void actualizarTablaConIGV() {
         });
         jPanel2.add(txtCodigoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 102, 30));
 
-        txtDescripcionVenta.setBackground(new java.awt.Color(204, 204, 204));
         txtDescripcionVenta.setBorder(null);
         txtDescripcionVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -595,7 +597,6 @@ private void actualizarTablaConIGV() {
         });
         jPanel2.add(txtDescripcionVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 191, 30));
 
-        txtCantidadVenta.setBackground(new java.awt.Color(204, 204, 204));
         txtCantidadVenta.setBorder(null);
         txtCantidadVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -608,12 +609,12 @@ private void actualizarTablaConIGV() {
         jPanel2.add(txtCantidadVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 40, 30));
 
         txtPrecioVenta.setEditable(false);
-        txtPrecioVenta.setBackground(new java.awt.Color(204, 204, 204));
+        txtPrecioVenta.setBackground(new java.awt.Color(255, 255, 255));
         txtPrecioVenta.setBorder(null);
         jPanel2.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 80, 30));
 
         txtStockDisponible.setEditable(false);
-        txtStockDisponible.setBackground(new java.awt.Color(204, 204, 204));
+        txtStockDisponible.setBackground(new java.awt.Color(255, 255, 255));
         txtStockDisponible.setBorder(null);
         jPanel2.add(txtStockDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 79, 30));
 
@@ -654,14 +655,15 @@ private void actualizarTablaConIGV() {
         jPanel2.add(btnEliminarventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, 40));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Dni/Ruc");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre:");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 352, -1, -1));
 
-        txtRucVenta.setBackground(new java.awt.Color(204, 204, 204));
         txtRucVenta.setBorder(null);
         txtRucVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -674,7 +676,7 @@ private void actualizarTablaConIGV() {
         jPanel2.add(txtRucVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 375, 116, 30));
 
         txtNombreClienteventa.setEditable(false);
-        txtNombreClienteventa.setBackground(new java.awt.Color(204, 204, 204));
+        txtNombreClienteventa.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreClienteventa.setBorder(null);
         jPanel2.add(txtNombreClienteventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 375, 169, 30));
 
@@ -706,6 +708,8 @@ private void actualizarTablaConIGV() {
         Midate.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 210, 30));
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Seleccionar:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, -1));
 
